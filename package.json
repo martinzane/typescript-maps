@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "start": "npx parcel index.html"
+  },
   "devDependencies": {
-    "@faker-js/faker": "^8.4.1"
+    "@faker-js/faker": "^8.4.1",
+    "buffer": "^6.0.3"
   }
 }
