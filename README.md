@@ -14,9 +14,14 @@ npm install npm@latest -g
 
 ### Usage
 
-1. Run project
+1. Install dependencies
 ```
-npx parcel index.html
+npm install
+```
+
+2. Run project
+```
+npm run start
 ```
 
 ## License
