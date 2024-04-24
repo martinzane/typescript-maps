@@ -10,4 +10,4 @@ const company = new Company();
 
 console.log(company);
 
-const map = new Map();
+const map = new Map("map");
