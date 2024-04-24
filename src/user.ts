@@ -2,8 +2,8 @@ import { faker } from "@faker-js/faker";
 import { Location } from "./types";
 
 class User {
-  name: string;
-  location: Location;
+  public name: string;
+  public location: Location;
 
   constructor() {
     this.name = faker.person.firstName();
@@ -11,6 +11,14 @@ class User {
       lat: faker.location.latitude(),
       lng: faker.location.longitude(),
     };
+  }
+
+  public markerContent(): string {
+    return `
+      <div>
+        <h1>User name: ${this.name}</h1>
+      </div>
+    `;
   }
 }
 

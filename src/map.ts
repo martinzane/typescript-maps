@@ -1,5 +1,10 @@
 import { Location } from "./types";
 
+export interface Mappable {
+  location: Location;
+  markerContent(): string;
+}
+
 class Map {
   private googleMap: google.maps.Map;
 
@@ -23,14 +28,22 @@ class Map {
     );
   }
 
-  public async addMarker(position: Location) {
+  public async addMarker(mappable: Mappable) {
     const { AdvancedMarkerElement } = (await google.maps.importLibrary(
       "marker"
     )) as google.maps.MarkerLibrary;
 
-    new AdvancedMarkerElement({
+    const marker = new AdvancedMarkerElement({
       map: this.googleMap,
-      position,
+      position: mappable.location,
+    });
+
+    marker.addListener("click", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: mappable.markerContent(),
+      });
+
+      infoWindow.open(this.googleMap, marker);
     });
   }
 }

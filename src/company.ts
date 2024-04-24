@@ -2,9 +2,9 @@ import { faker } from "@faker-js/faker";
 import { Location } from "./types";
 
 class Company {
-  name: string;
-  catchPhrase: string;
-  location: Location;
+  public name: string;
+  public catchPhrase: string;
+  public location: Location;
 
   constructor() {
     this.name = faker.company.name();
@@ -13,6 +13,15 @@ class Company {
       lat: faker.location.latitude(),
       lng: faker.location.longitude(),
     };
+  }
+
+  public markerContent(): string {
+    return `
+      <div>
+        <h1>Company name: ${this.name}</h1>
+        <h3>Catchphrase: ${this.catchPhrase}</h3>
+      </div>
+    `;
   }
 }
 

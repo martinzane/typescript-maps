@@ -3,15 +3,9 @@ import Map from "./map";
 import User from "./user";
 
 const user = new User();
-
-console.log(user);
-
 const company = new Company();
-
-console.log(company);
-
 const map = new Map();
 
 map.initialize("map");
-map.addMarker(user.location);
-map.addMarker(company.location);
+map.addMarker(user);
+map.addMarker(company);
