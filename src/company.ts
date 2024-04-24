@@ -1,7 +1,8 @@
 import { faker } from "@faker-js/faker";
 import { Location } from "./types";
+import { Mappable } from "./map";
 
-class Company {
+class Company implements Mappable {
   public name: string;
   public catchPhrase: string;
   public location: Location;
