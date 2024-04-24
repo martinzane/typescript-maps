@@ -1,12 +1,10 @@
 import { faker } from "@faker-js/faker";
+import { Location } from "./types";
 
 class Company {
   name: string;
   catchPhrase: string;
-  location: {
-    lat: number;
-    lng: number;
-  };
+  location: Location;
 
   constructor() {
     this.name = faker.company.name();

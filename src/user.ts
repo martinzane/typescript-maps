@@ -1,11 +1,9 @@
 import { faker } from "@faker-js/faker";
+import { Location } from "./types";
 
 class User {
   name: string;
-  location: {
-    lat: number;
-    lng: number;
-  };
+  location: Location;
 
   constructor() {
     this.name = faker.person.firstName();

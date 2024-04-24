@@ -10,4 +10,8 @@ const company = new Company();
 
 console.log(company);
 
-const map = new Map("map");
+const map = new Map();
+
+map.initialize("map");
+map.addMarker(user.location);
+map.addMarker(company.location);
